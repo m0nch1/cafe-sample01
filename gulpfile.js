@@ -9,6 +9,12 @@ const rename = require("gulp-rename");
 const del = require("del");
 const browserSync = require("browser-sync");
 
+const webpackStream = require("webpack-stream");
+const webpack = require("webpack");
+
+// webpackの設定ファイルの読み込み
+const webpackConfig = require("./webpack.config");
+
 //setting : paths
 const paths = {
   root: "./dist/",
@@ -93,6 +99,7 @@ task("reload", (done) => {
 task("watch", (done) => {
   watch([paths.cssSrc], series("sass", "reload"));
   watch([paths.jsSrc], series("js", "reload"));
+  watch([paths.jsSrc], series("webpack", "reload"));
   watch([paths.pug], series("pug", "reload"));
   watch([paths.imageSrc], series("image", "reload"));
   done();
@@ -104,7 +111,21 @@ task("clean", function (done) {
   done();
 });
 
+//Webpack
+task("webpack", (done) => {
+  return webpackStream(webpackConfig, webpack).pipe(gulp.dest("dist"));
+});
+
 task(
   "default",
-  parallel("watch", "browser-sync", "pug", "sass", "js", "image", "clean")
+  parallel(
+    "watch",
+    "browser-sync",
+    "pug",
+    "sass",
+    "js",
+    "image",
+    "clean",
+    "webpack"
+  )
 );
