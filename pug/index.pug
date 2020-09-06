@@ -6,32 +6,32 @@ block vars
   - var page = pages[key]
   
 block contents
-  #home.hero
+  div(data-bg="./images/home.jpg")#home.hero.lazyload
     .hero__logo
       h1
-        img(src=image_path+"/logo.png" alt="logo")
+        img(loading="lazy" src=image_path+"/logo.png" alt="logo")
 
   main.main
     .news#news
       h2.news__title News
       .news__article
         .news__thumbnail
-          img(src=image_path+"/news/sample1.jpg" alt="sample image")
+          img(loading="lazy" src=image_path+"/news/sample1.jpg" alt="sample image")
         .news__date 20XX-XX-XX
         .news__article-title 新しいコーヒー豆入荷しました！
       .news__article 
         .news__thumbnail
-          img(src=image_path+"/news/sample2.jpg" alt="sample image")
+          img(loading="lazy" src=image_path+"/news/sample2.jpg" alt="sample image")
         .news__date 20XX-XX-XX
         .news__article-title シルバーウィークの営業について
       .news__article 
         .news__thumbnail
-          img(src=image_path+"/news/sample3.jpg" alt="sample image")
+          img(loading="lazy" src=image_path+"/news/sample3.jpg" alt="sample image")
         .news__date 20XX-XX-XX
         .news__article-title メディア掲載
       .news__article 
         .news__thumbnail
-          img(src=image_path+"/news/sample4.jpg" alt="sample image")
+          img(loading="lazy" src=image_path+"/news/sample4.jpg" alt="sample image")
         .news__date 20XX-XX-XX
         .news__article-title HPをリニューアルしました！
 
@@ -40,7 +40,7 @@ block contents
       h2.menu__title Menu
       .menu__article
         .menu__image
-          img(src=image_path+"/menu/lunch.jpg" alt="lunch image")
+          img(loading="lazy" src=image_path+"/menu/lunch.jpg" alt="lunch image")
         .menu__desc
           .menu__article-title lunch
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus amet minus beatae, voluptatem sapiente facilis hic placeat labore laboriosam nemo, ipsa magni in aperiam. Quia, amet. Tempore dicta nostrum aliquam.
@@ -49,10 +49,10 @@ block contents
           .menu__article-title cafe 
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus amet minus beatae, voluptatem sapiente facilis hic placeat labore laboriosam nemo, ipsa magni in aperiam. Quia, amet. Tempore dicta nostrum aliquam.
         .menu__image
-          img(src=image_path+"/menu/cafe.jpg" alt="cafe image")
+          img(loading="lazy" src=image_path+"/menu/cafe.jpg" alt="cafe image")
       .menu__article
         .menu__image
-          img(src=image_path+"/menu/dinner.jpg" alt="dinner image")
+          img(loading="lazy" src=image_path+"/menu/dinner.jpg" alt="dinner image")
         .menu__desc
           .menu__article-title dinner
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus amet minus beatae, voluptatem sapiente facilis hic placeat labore laboriosam nemo, ipsa magni in aperiam. Quia, amet. Tempore dicta nostrum aliquam.

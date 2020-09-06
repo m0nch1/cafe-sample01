@@ -1,4 +1,8 @@
 import smoothscroll from "smoothscroll-polyfill";
+import "lazysizes";
+import "lazysizes/plugins/parent-fit/ls.parent-fit";
+
+smoothscroll.polyfill();
 
 const spMenus = document.querySelectorAll(".nav__list--sp a");
 const spToggleCheckbox = document.querySelector("input#nav-input");
