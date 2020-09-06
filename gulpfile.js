@@ -116,6 +116,8 @@ task("webpack", (done) => {
   return webpackStream(webpackConfig, webpack).pipe(gulp.dest("dist"));
 });
 
+task("build", parallel("pug", "sass", "js", "image", "clean", "webpack"));
+
 task(
   "default",
   parallel(
