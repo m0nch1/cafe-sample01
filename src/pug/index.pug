@@ -1,10 +1,10 @@
 extends ./layouts/_home.pug
 
 block vars
-  include _config.pug
+  include ./_config.pug
   - var key = "home"
   - var page = pages[key]
-  
+
 block contents
   div(data-bg="./images/home.jpg")#home.hero.lazyload
     .hero__logo
